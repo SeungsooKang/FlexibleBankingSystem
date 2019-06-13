@@ -11,11 +11,11 @@ namespace Assignment02
         Active,
         Closed
     }
-    class BankAccount
+    abstract class BankAccount
     {
         public string AccountNumber { get; set; }
 
-        private double _balance;
+        protected double _balance;
         public double Balance
         {
             get { return _balance; }
@@ -24,12 +24,20 @@ namespace Assignment02
         public Owner owner { get; set; }
         public Status status { get; set; }
 
-        public BankAccount(double initialBalance)
+        public BankAccount(double initialBalance=0)
         {
-            
+            _balance = initialBalance;
         }
 
+        public virtual void Deposit(double amt)
+        {
+            if (status==Status.Active)
+                _balance += amt;
+            else
+                throw new Exception("The account is not active. Deposit failed.\n");
+        }
 
+        public abstract void Withdraw(double amt);
 
     }
 }
