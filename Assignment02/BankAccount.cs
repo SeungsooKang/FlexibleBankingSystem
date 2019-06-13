@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,13 @@ namespace Assignment02
     }
     abstract class BankAccount
     {
+        private static int _numOfOpenedAccounts;
+
+        public static int NumOfOpenedAccounts
+        {
+            get { return _numOfOpenedAccounts; }
+        }
+
         public string AccountNumber { get; set; }
 
         protected double _balance;
@@ -24,8 +32,15 @@ namespace Assignment02
         public Owner owner { get; set; }
         public Status status { get; set; }
 
+        static BankAccount()
+        {
+            _numOfOpenedAccounts = 0;
+        }
+
         public BankAccount(double initialBalance=0)
         {
+            _numOfOpenedAccounts++;
+            status = Status.Active;
             _balance = initialBalance;
         }
 
@@ -38,6 +53,13 @@ namespace Assignment02
         }
 
         public abstract void Withdraw(double amt);
+
+        public void Close()
+        {
+            status = Status.Closed;
+            _balance = 0;
+            _numOfOpenedAccounts--;
+        }
 
     }
 }
