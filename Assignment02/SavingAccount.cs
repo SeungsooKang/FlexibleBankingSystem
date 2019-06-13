@@ -8,7 +8,9 @@ namespace Assignment02
 {
     class SavingAccount: BankAccount
     {
-        public double AnualInterestRate { get; set; }   
+        public double AnnualInterestRate { get; set; }
+        public InterestMode Mode { get; set; }
+
         public override void Withdraw(double amt)
         {
             if (status == Status.Active)
@@ -24,6 +26,10 @@ namespace Assignment02
             }
         }
 
+        public double GetAnnualInterestAmount()
+        {
+            return Interest.CalculateInterest(_balance, AnnualInterestRate, Mode);
+        }
 
     }
 }
