@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assignment02
 {
-    enum Status
+    enum AccountStatus
     {
         Active,
         Closed
@@ -15,14 +15,12 @@ namespace Assignment02
     abstract class BankAccount
     {
         private static int _numOfOpenedAccounts;
-
         public static int NumOfOpenedAccounts
         {
             get { return _numOfOpenedAccounts; }
         }
 
         public string AccountNumber { get; set; }
-
         protected double _balance;
         public double Balance
         {
@@ -30,7 +28,7 @@ namespace Assignment02
         }
 
         public Owner owner { get; set; }
-        public Status status { get; set; }
+        public AccountStatus Status { get; set; }
 
         static BankAccount()
         {
@@ -40,13 +38,13 @@ namespace Assignment02
         public BankAccount(double initialBalance=0)
         {
             _numOfOpenedAccounts++;
-            status = Status.Active;
+            Status = AccountStatus.Active;
             _balance = initialBalance;
         }
 
         public virtual void Deposit(double amt)
         {
-            if (status==Status.Active)
+            if (Status==AccountStatus.Active)
                 _balance += amt;
             else
                 throw new Exception("The account is not active. Deposit failed.\n");
@@ -56,9 +54,20 @@ namespace Assignment02
 
         public void Close()
         {
-            status = Status.Closed;
+            Status = AccountStatus.Closed;
             _balance = 0;
             _numOfOpenedAccounts--;
+        }
+
+        public void TransferTo(BankAccount destination, double amt)
+        {
+            if (Status == AccountStatus.Closed)
+                throw new Exception("Current account is closed. Cannot send money.\n");
+            if (destination.Status == AccountStatus.Closed)
+                throw new Exception("Destination account is closed. Cannot send money.\n");
+
+            Withdraw(amt);
+            destination.Deposit(amt);
         }
 
     }

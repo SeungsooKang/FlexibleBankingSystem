@@ -24,7 +24,8 @@ namespace Assignment02
                     interest = balance * rate;
                     break;
                 case InterestMode.Compound:
-                    interest = balance * Math.Pow(1+rate/12,12);
+                    // I corrected Compound Interest Rate formula. It should deduct the original balance to only get interest.
+                    interest = balance * (Math.Pow(1 + rate / 12, 12) - 1); 
                     break;
             }
 

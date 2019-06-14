@@ -19,17 +19,12 @@ namespace Assignment02
 
         public override void Withdraw(double amt)
         {
-            if (status == Status.Active)
+            if (Status == AccountStatus.Active)
             {
                 if (_balance>=amt)
-                {
                     _balance -= amt;
-                }
                 else if (_balance + OverDraftLimit>=amt + OverDraftFee)
-                {
-                    _balance -= amt;
-                    _balance -= OverDraftFee;
-                }
+                    _balance -= (amt+ OverDraftFee);
                 else
                     throw new Exception("The balance has reached OverDraft Limit. Withdraw failed.\n");
             }

@@ -17,7 +17,7 @@ namespace Assignment02
 
         public override void Withdraw(double amt)
         {
-            if (status == Status.Active)
+            if (Status == AccountStatus.Active)
             {
                 if (_balance >= amt)
                     _balance -= amt;
@@ -25,9 +25,7 @@ namespace Assignment02
                     throw new Exception("There isn't enough balance. Withdraw failed.\n");
             }
             else
-            {
                 throw new Exception("The account is not active. Withdraw failed.\n");
-            }
         }
 
         public double GetAnnualInterestAmount()
