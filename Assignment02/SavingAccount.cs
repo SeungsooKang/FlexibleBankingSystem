@@ -11,6 +11,10 @@ namespace Assignment02
         public double AnnualInterestRate { get; set; }
         public InterestMode Mode { get; set; }
 
+        public SavingAccount(double initialBalance = 0): base(initialBalance)
+        {
+        }
+
         public override void Withdraw(double amt)
         {
             if (status == Status.Active)
