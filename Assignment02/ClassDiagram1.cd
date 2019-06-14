@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Assignment02.AccountManager">
+    <Position X="0.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABCAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccountManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment02.BankAccount">
+    <Position X="4.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAEAAAAgAAACAgBAAAEAAgAAAAAAABAAACAAAI=</HashCode>
+      <FileName>BankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment02.CheckingAccount">
+    <Position X="7" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAEAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CheckingAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment02.Interest">
+    <Position X="10.25" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment02.Owner">
+    <Position X="0.5" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAACAAAAAAAQAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Owner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment02.SavingAccount">
+    <Position X="7" Y="3" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>SavingAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Assignment02.AccountStatus">
+    <Position X="0.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAACAAAA=</HashCode>
+      <FileName>BankAccount.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Assignment02.InterestMode">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interest.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
